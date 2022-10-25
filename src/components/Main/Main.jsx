@@ -1,7 +1,9 @@
-import { useEffect, useRef, useState } from "react";
-import styles from "./Main.module.scss";
+import { useEffect, useRef, useState } from 'react';
+import styles from './Main.module.scss';
+import { useDispatch, useSelector } from 'react-redux';
+import { addNote, addNote2 } from '../../redux/reducers/notes';
 function Main({ children }) {
-  const [inputValue, setInputValue] = useState("Фронтенд");
+  const [inputValue, setInputValue] = useState('Фронтенд');
   const [inputWidth, setInputWidth] = useState(0);
   const [disabled, setDisabled] = useState(true);
   const [isNoteMenuActive, setIsNoteMenuActive] = useState(false);
@@ -13,8 +15,17 @@ function Main({ children }) {
   function onChange(e) {
     setInputValue(e.target.value);
   }
+
+  const dispatch = useDispatch();
+  const info = useSelector((store) => store);
+  console.log(info.notes);
   return (
     <div className={styles.main}>
+      <button onClick={() => dispatch(addNote('sad'))}>Добавить ПАПКУ</button>
+      <button onClick={() => dispatch(addNote2('bad'))}>Добавить дело</button>
+      {/*      {info.notes.map((item) => (
+        <li key={item.id}>{item.title}</li>
+      ))}*/}
       <div className={styles.wrapper}>
         <input
           spellCheck={false}
@@ -26,7 +37,8 @@ function Main({ children }) {
           maxLength="25"
           disabled={disabled}
           onBlur={() => {
-            inputValue.length === 0 && setInputValue("Без названия");
+            inputValue.length === 0 && setInputValue('Без названия');
+            dispatch(addNote('Без названия'));
             setDisabled(true);
           }}
           style={{

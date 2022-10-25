@@ -1,0 +1,56 @@
+.badgeInput {
+  display: none;
+  & + label {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border-radius: 30px;
+    cursor: pointer;
+  }
+  &:checked + label {
+    border: 3px solid #525252
+  }
+}
+
+.badge {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border-radius: 30px;
+  cursor: pointer;
+
+  &_grey {
+    background-color: #c9d1d3;
+  }
+
+  &_lime {
+    background-color: #b6e6bd;
+  }
+
+  &_purple {
+    background-color: #c355f5;
+  }
+
+  &_black {
+    background-color: #08001a;
+  }
+
+  &_red {
+    background-color: #ff6464;
+  }
+
+  &_green {
+    background-color: #42b883;
+  }
+
+  &_blue {
+    background-color: #64c4ed;
+  }
+
+  &_pink {
+    background-color: #ffbbcc;
+  }
+  &Active {
+
+  }
+}
