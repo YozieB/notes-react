@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import styles from './Main.module.scss';
 import { useDispatch, useSelector } from 'react-redux';
-import { addNote, addNote2 } from '../../redux/reducers/notes';
+import { addNote } from '../../redux/reducers/notes';
 function Main({ children }) {
   const [inputValue, setInputValue] = useState('Фронтенд');
   const [inputWidth, setInputWidth] = useState(0);
@@ -15,17 +15,11 @@ function Main({ children }) {
   function onChange(e) {
     setInputValue(e.target.value);
   }
-
   const dispatch = useDispatch();
-  const info = useSelector((store) => store);
-  console.log(info.notes);
+
   return (
     <div className={styles.main}>
       <button onClick={() => dispatch(addNote('sad'))}>Добавить ПАПКУ</button>
-      <button onClick={() => dispatch(addNote2('bad'))}>Добавить дело</button>
-      {/*      {info.notes.map((item) => (
-        <li key={item.id}>{item.title}</li>
-      ))}*/}
       <div className={styles.wrapper}>
         <input
           spellCheck={false}

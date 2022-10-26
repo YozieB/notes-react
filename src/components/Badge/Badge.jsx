@@ -2,10 +2,6 @@ import React, { useState } from 'react';
 import styles from './Badge.module.scss';
 function Badge({ color }) {
   return (
-    /*    <i
-      className={styles.badge}
-      style={{ background: color }}
-    ></i>*/
     <>
       <input
         className={styles.badgeInput}
@@ -20,4 +16,3 @@ function Badge({ color }) {
 }
 
 export default Badge;
-/*<i className={('badge', { [`badge--${'color'}`]: 'color' })}></i>*/
