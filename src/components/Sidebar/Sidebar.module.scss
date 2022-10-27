@@ -8,14 +8,15 @@
 
 .button {
     font-size: 18px;
-    font-weight: 500;
-    line-height: 19px;
+    font-weight: 600;
+    font-family: 'Lato', sans-serif;
     width: 100%;
+    height: 38px;
     cursor: pointer;
     position: relative;
     border: none;
     background: none;
-    padding: 8px 0 10px 32px;
+    padding-left: 31px;
     margin-bottom: 20px;
     text-align: left;
     &::before {
@@ -25,6 +26,8 @@
         width: 18px;
         height: 18px;
         left: 8px;
+        top: 50%;
+        transform: translateY(-50%);
     }
     &_active {
         background: #FFFFFF;
@@ -45,6 +48,7 @@
     border: none;
     position: relative;
     padding-left: 32px;
+    transition: opacity .2s ease;
     &::before {
         content: '';
         position: absolute;
@@ -56,6 +60,9 @@
         background-repeat: no-repeat;
         top: 50%;
         transform: translateY(-50%);
+    }
+    &:hover {
+        opacity: .8;
     }
 }
 

@@ -7,15 +7,6 @@
     background: #FFF;
     box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.05);
     border-radius: 10px;
-/*    visibility: hidden;*/
-/*    opacity: 0;
-    transform: translateY(-100px);
-    transition: opacity .2s ease, transform .2s ease;*/
-/*    &Visible {
-        opacity: 1;
-        transform: translateY(0);
-        visibility: visible;
-    }*/
 }
 
 .textInput {
@@ -26,7 +17,7 @@
     border-radius: 4px;
     outline: none;
     padding: 7px 0 8px 11px;
-    font-family: 'Lato';
+    font-family: 'Lato', sans-serif;
     font-style: normal;
     font-weight: 600;
     font-size: 14px;

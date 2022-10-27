@@ -1,0 +1,39 @@
+.button {
+  font-size: 16px;
+  font-weight: 600;
+  font-family: 'Lato', sans-serif;
+  width: 100%;
+  cursor: pointer;
+  height: 38px;
+  border: none;
+  background: none;
+  padding: 0 12px;
+  align-items: center;
+  gap: 0 10px;
+  display: flex;
+  &_active {
+    background: #FFFFFF;
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.03);
+    border-radius: 4px;
+  }
+}
+
+.colorIndicator {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+
+.closeBtn {
+  width: 10px;
+  height: 10px;
+  background-image: url('../../images/close.svg');
+  margin-left: auto;
+}
+
+.name {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  max-width: 115px;
+}
