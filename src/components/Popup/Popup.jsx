@@ -5,7 +5,7 @@ import Badge from '../Badge/Badge';
 import uuid from 'react-uuid';
 import { addFolder } from '../../redux/reducers/folders';
 import { motion } from 'framer-motion';
-const Popup = forwardRef(({ setIsShown, onClose, isShown }, ref) => {
+const Popup = forwardRef(({ onClose }, ref) => {
   const [colorButtonState, setColorButtonState] = useState(undefined);
   const [inputValue, setInputValue] = useState('');
   const colors = useSelector((state) => state.colors);
@@ -15,17 +15,11 @@ const Popup = forwardRef(({ setIsShown, onClose, isShown }, ref) => {
     e.preventDefault();
     dispatch(addFolder(inputValue, uniqueId, colorButtonState || '#c9d1d3'));
     setInputValue('');
-    setIsShown(false);
+    onClose();
   };
 
   return (
-    <div
-      ref={ref}
-      className={
-        /*!isShown ? styles.popup : `${styles.popup} ${styles.popupVisible}`*/
-        styles.popup
-      }
-    >
+    <motion.div ref={ref} className={styles.popup}>
       <form
         onSubmit={(e) => {
           handleFormSubmit(e);
@@ -52,7 +46,7 @@ const Popup = forwardRef(({ setIsShown, onClose, isShown }, ref) => {
         </button>
       </form>
       <button className={styles.closeBtn} onClick={onClose}></button>
-    </div>
+    </motion.div>
   );
 });
 

@@ -1,6 +1,14 @@
 body {
   margin: 0;
   font-family: 'Montserrat', sans-serif;
+  background-image: url("./images/bg.svg");
+  background-size: cover;
+}
+@media screen and (min-width: 960px) {
+  html {
+    margin-left: calc(100vw - 100%);
+    margin-right: 0;
+  }
 }
 
 /* Fonts */

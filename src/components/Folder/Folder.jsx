@@ -14,13 +14,16 @@ const Folder = forwardRef(
         whileHover="hover"
         animate="rest"
         ref={ref}
+        style={isActive && { borderRadius: 4 }}
         className={
           isActive ? `${styles.button} ${styles.button_active}` : styles.button
         }
       >
         <div
           className={styles.colorIndicator}
-          style={{ backgroundColor: color }}
+          style={{
+            backgroundColor: color,
+          }}
         ></div>
         <div className={styles.name}>{title}</div>
         <motion.div

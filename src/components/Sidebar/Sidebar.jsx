@@ -1,7 +1,7 @@
 import React, { useState, useRef } from 'react';
 import styles from './Sidebar.module.scss';
 import AnimatedPopup from '../Popup/Popup';
-import { AnimatePresence } from 'framer-motion';
+import { AnimatePresence, motion } from 'framer-motion';
 import { closeByClickOutside } from '../../utils/hooks';
 import AnimatedFolder from '../Folder/Folder';
 import { useDispatch, useSelector } from 'react-redux';
@@ -23,7 +23,13 @@ function Sidebar() {
   const folders = useSelector((state) => state.folders);
   const dispatch = useDispatch();
   return (
-    <div className={styles.sidebar}>
+    <div
+      className={styles.sidebar}
+      style={{
+        borderTopLeftRadius: 20,
+        borderRightTopRadius: 0,
+      }}
+    >
       <button
         className={
           folders.find((el) => el.isActive === true)
@@ -39,7 +45,7 @@ function Sidebar() {
           <AnimatedFolder
             initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: 15 }}
+            exit={{ opacity: 0, y: -15 }}
             title={el.title}
             color={el.color}
             id={el.id}
@@ -61,12 +67,10 @@ function Sidebar() {
         <AnimatePresence>
           {isShown && (
             <AnimatedPopup
-              setIsShown={setIsShown}
-              isShown={isShown}
               onClose={handleClosePopup}
               initial={{ opacity: 0, y: 15 }}
               animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: 15 }}
+              exit={{ opacity: 0, y: -15 }}
               ref={popupRef}
             />
           )}
