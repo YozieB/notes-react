@@ -69,7 +69,7 @@ function Sidebar() {
         <AnimatePresence>
           {isShown && (
             <AnimatedPopup
-              layou
+              layout
               onClose={handleClosePopup}
               initial={{ opacity: 0, y: 15 }}
               animate={{ opacity: 1, y: 0 }}
