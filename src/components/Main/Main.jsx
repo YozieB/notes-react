@@ -1,9 +1,11 @@
 import styles from './Main.module.scss';
+import { motion } from 'framer-motion';
+
 function Main({ children }) {
   return (
-    <div className={styles.main}>
+    <motion.div layout="position" className={styles.main}>
       <div>{children}</div>
-    </div>
+    </motion.div>
   );
 }
 

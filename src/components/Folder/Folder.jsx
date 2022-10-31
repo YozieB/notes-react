@@ -12,6 +12,7 @@ const Folder = forwardRef(
         onClick={onSetActiveClick}
         initial="initial"
         whileHover="hover"
+        layout="position"
         animate="rest"
         ref={ref}
         style={isActive && { borderRadius: 4 }}
@@ -19,12 +20,13 @@ const Folder = forwardRef(
           isActive ? `${styles.button} ${styles.button_active}` : styles.button
         }
       >
-        <div
+        <motion.div
+          layout
           className={styles.colorIndicator}
           style={{
             backgroundColor: color,
           }}
-        ></div>
+        ></motion.div>
         <div className={styles.name}>{title}</div>
         <motion.div
           className={styles.closeBtn}

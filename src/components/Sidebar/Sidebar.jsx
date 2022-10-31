@@ -23,14 +23,16 @@ function Sidebar() {
   const folders = useSelector((state) => state.folders);
   const dispatch = useDispatch();
   return (
-    <div
+    <motion.div
+      layout="scroll"
       className={styles.sidebar}
       style={{
         borderTopLeftRadius: 20,
         borderRightTopRadius: 0,
       }}
     >
-      <button
+      <motion.button
+        layout
         className={
           folders.find((el) => el.isActive === true)
             ? `${styles.button}`
@@ -39,13 +41,13 @@ function Sidebar() {
         onClick={() => dispatch(setInactive())}
       >
         Все задачи
-      </button>
+      </motion.button>
       <AnimatePresence>
         {folders.map((el) => (
           <AnimatedFolder
-            initial={{ opacity: 0, y: 15 }}
+            initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -15 }}
+            exit={{ opacity: 0, y: -10 }}
             title={el.title}
             color={el.color}
             id={el.id}
@@ -60,13 +62,14 @@ function Sidebar() {
           />
         ))}
       </AnimatePresence>
-      <div className={styles.folderBtnContainer}>
+      <motion.div layout className={styles.folderBtnContainer}>
         <button onClick={handleOpenPopup} className={styles.folderBtn}>
           Добавить папку
         </button>
         <AnimatePresence>
           {isShown && (
             <AnimatedPopup
+              layou
               onClose={handleClosePopup}
               initial={{ opacity: 0, y: 15 }}
               animate={{ opacity: 1, y: 0 }}
@@ -75,8 +78,8 @@ function Sidebar() {
             />
           )}
         </AnimatePresence>
-      </div>
-    </div>
+      </motion.div>
+    </motion.div>
   );
 }
 
