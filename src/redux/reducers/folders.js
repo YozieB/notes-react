@@ -5,6 +5,18 @@ const initialState = [
     color: 'red',
     isActive: false,
   },
+  {
+    title: 'Фронтенд',
+    id: 1448,
+    color: '#64c4ed',
+    isActive: false,
+  },
+  {
+    title: 'Покупки',
+    id: 322,
+    color: '#b6e6bd',
+    isActive: false,
+  },
 ];
 
 const ADD_FOLDER = 'ADD_FOLDER';

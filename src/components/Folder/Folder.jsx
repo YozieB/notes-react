@@ -10,10 +10,7 @@ const Folder = forwardRef(
     return (
       <motion.button
         onClick={onSetActiveClick}
-        initial="initial"
-        whileHover="hover"
         layout="position"
-        animate="rest"
         ref={ref}
         style={isActive && { borderRadius: 4 }}
         className={

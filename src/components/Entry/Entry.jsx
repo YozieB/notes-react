@@ -3,8 +3,10 @@ import { forwardRef, useEffect, useRef, useState } from 'react';
 import React from 'react';
 import styles from './Entry.module.scss';
 import { renameTitle } from '../../redux/reducers/folders';
-import { motion } from 'framer-motion';
+import { AnimatePresence, motion } from 'framer-motion';
 import AddNoteMenu from '../AddNoteMenu/AddNoteMenu';
+import { removeNote } from '../../redux/reducers/notes';
+import AnimatedNote from '../Note/Note';
 const Entry = forwardRef(({ title, id, color, disableIndicators }, ref) => {
   const [inputValue, setInputValue] = useState(title);
   const [inputWidth, setInputWidth] = useState(0);
@@ -27,8 +29,9 @@ const Entry = forwardRef(({ title, id, color, disableIndicators }, ref) => {
     setInputValue(e.target.value);
   }
   const dispatch = useDispatch();
+  const notes = useSelector((state) => state.notes);
   return (
-    <div className={styles.entry} ref={ref}>
+    <motion.div layout="position" className={styles.entry} ref={ref}>
       <form
         className={styles.wrapper}
         onSubmit={(e) => {
@@ -69,9 +72,28 @@ const Entry = forwardRef(({ title, id, color, disableIndicators }, ref) => {
           ></button>
         )}
       </form>
-      {/* Тут будут заметки */}
-      {!disableIndicators && <AddNoteMenu />}
-    </div>
+
+      {notes.length > 0 &&
+        notes.map((el) => {
+          if (el.parentId === id) {
+            return (
+              <AnimatedNote
+                key={el.id}
+                id={el.id}
+                title={el.title}
+                isDone={el.isDone}
+                disableIndicators={disableIndicators}
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                animation={{ type: 'Tween' }}
+                onRemoveClick={() => dispatch(removeNote(el.id))}
+              />
+            );
+          }
+        })}
+
+      {!disableIndicators && <AddNoteMenu id={id} />}
+    </motion.div>
   );
 });
 const AnimatedEntry = motion(Entry, { forwardMotionProps: true });
