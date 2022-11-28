@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.css": "/notes-react/static/css/main.9e791a22.css",
+    "main.js": "/notes-react/static/js/main.a5559f34.js",
+    "static/media/Lato-Semibold.woff2": "/notes-react/static/media/Lato-Semibold.2a87df9ba418ee6903d4.woff2",
+    "static/media/Lato-Medium.woff2": "/notes-react/static/media/Lato-Medium.37b61c5e598ef53aaec1.woff2",
+    "static/media/Montserrat-Bold.woff2": "/notes-react/static/media/Montserrat-Bold.0af89c10df9bc2f8d646.woff2",
+    "static/media/Roboto-Regular.woff2": "/notes-react/static/media/Roboto-Regular.60c6d073cfdf57bc03d2.woff2",
+    "static/media/all-notes.svg": "/notes-react/static/media/all-notes.962e9d08339e7cc14b64.svg",
+    "static/media/close-popup.svg": "/notes-react/static/media/close-popup.ac7b9278cab353907f42.svg",
+    "static/media/close.svg": "/notes-react/static/media/close.618167a43b6d4de873ad.svg",
+    "static/media/bg.svg": "/notes-react/static/media/bg.940aac3b2961222f503a.svg",
+    "static/media/pencil.svg": "/notes-react/static/media/pencil.d48cb0239be10abedf14.svg",
+    "index.html": "/notes-react/index.html",
+    "static/media/checked-hover.svg": "/notes-react/static/media/checked-hover.16c587d8e20193190234.svg",
+    "static/media/checked-clicked.svg": "/notes-react/static/media/checked-clicked.dc8254dacea80acf5262.svg",
+    "static/media/add-folder.svg": "/notes-react/static/media/add-folder.bb82cf258224298ee8e8.svg",
+    "static/media/add-note.svg": "/notes-react/static/media/add-note.7cfa1c971b008d03a4c9.svg",
+    "main.9e791a22.css.map": "/notes-react/static/css/main.9e791a22.css.map",
+    "main.a5559f34.js.map": "/notes-react/static/js/main.a5559f34.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.9e791a22.css",
+    "static/js/main.a5559f34.js"
+  ]
+}
