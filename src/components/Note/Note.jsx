@@ -19,7 +19,11 @@ const Note = forwardRef(
           id={id}
         />
         <label htmlFor={id} />
-        <div className={styles.title} style={isDone ? { opacity: 0.5 } : {}}>
+        <div
+          onClick={() => dispatch(setDone(id))}
+          className={styles.title}
+          style={isDone ? { opacity: 0.5 } : {}}
+        >
           <div
             className={styles.line}
             style={isDone ? { width: '100%' } : {}}

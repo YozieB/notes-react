@@ -3,6 +3,7 @@ import styles from './AddNoteMenu.module.scss';
 import { useDispatch } from 'react-redux';
 import { addNote } from '../../redux/reducers/notes';
 import uuid from 'react-uuid';
+import { motion } from 'framer-motion';
 function AddNoteMenu({ id }) {
   const [isNoteMenuActive, setIsNoteMenuActive] = useState(false);
   const [inputValue, setInputValue] = useState('');
